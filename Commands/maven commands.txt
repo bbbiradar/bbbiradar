@@ -1,0 +1,106 @@
+ 1  sudo apt install openjdk-11-jdk -y
+    2  java -version
+    3  wget https://dlcdn.apache.org/maven/maven-3/3.9.3/binaries/apache-maven-3                                                                                        .9.3-bin.tar.gz
+    4  ls
+    5  tar  xfz apache-maven-3.9.3-bin.tar.gz
+    6  ls
+    7  cd apache-maven-3.9.3/
+    8  pwd
+    9  sudo apt update -y
+   10  cd apache-maven-3.9.3/
+   11  pwd
+   12  export M2_HOME='/home/ubuntu/apache-maven-3.9.3'
+   13  export PATH="$M2_HOME/bin:$PATH"
+   14  mvn -- version
+   15  mvn -version
+   16  sudo apt install maven
+   17  mvn -version
+   18  ls
+   19  sudo install tree
+   20  sudo apt install tree
+   21  git clone https://github.com/bbbiradar/Test.git
+   22  ls
+   23  ll
+   24  cd Test/
+   25  ls
+   26  cd maven/
+   27  ls
+   28  tree
+   29  ls
+   30  cd simple-war/
+   31  ls
+   32  mvn package
+   33  ls
+   34  cd target/
+   35  ls
+   36  cd ..
+   37  pwd
+   38  ll
+   39  ls -a
+   40  cd .m2/
+   41  ls
+   42  cd repository/
+   43  ls
+   44  cd ..
+   45  cd
+   46  cd Test/
+   47  ls
+   48  cd maven/
+   49  ll
+   50  ls
+   51  cd simple-war/
+   52  mvn package
+   53  cd
+   54  ls
+   55  ll
+   56  cd .m2/
+   57  ls
+   58  cd repository/
+   59  ls
+   60  cd
+   61  rm -r .m2/
+   62  ls
+   63  ll
+   64  cd Test/
+   65  ls
+   66  cd maven/
+   67  ls
+   68  cd simple-war/
+   69  mnv package
+   70  mvn package
+   71  ll
+   72  cd target/
+   73  ll
+   74  cd
+   75  ls
+   76  ll
+   77  cd .m2/
+   78  ll
+   79  cd re
+   80  cd repository/
+   81  ll
+   82  cd
+   83  cd Test/maven/simple-war/
+   84  mvn packge
+   85  cd
+   86  l
+   87  ls
+   88  cd Test/
+   89  ls
+   90  cd Ma
+   91  cd maven/
+   92  ls
+   93  cd simple-war/
+   94  mvn package
+   95  ll
+   96  cd Test/
+   97  cd
+   98  ll
+   99  cd .m2/
+  100  ll
+  101  cd repository/
+  102  ll
+  103  cd
+  104  tree
+  105  cd Test/maven/simple-war/
+  106  mvn clean package

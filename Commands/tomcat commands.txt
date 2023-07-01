@@ -1,0 +1,37 @@
+ 1  wget https://raw.githubusercontent.com/bbbiradar/Test/main/tomcat/install.sh
+    2  curl https://raw.githubusercontent.com/bbbiradar/Test/main/tomcat/install.sh
+    3  curl -s https://raw.githubusercontent.com/bbbiradar/Test/main/tomcat/install.sh |sudo  bash
+    4  sudo vi /opt/tomcat/conf/tomcat-users.xml
+    5  sudo vi /opt/tomcat/webapps/manager/META-INF/context.xml
+    6  sudo vi /opt/tomcat/webapps/host-manager/META-INF/context.xml
+    7  sudo systemctl daemon-reload
+    8  sudo systemctl enable tomcat
+    9  sudo systemctl start tomcat
+   10  sudo systemctl status tomcat
+   11  cd /opt/tomcat/
+   12  ls
+   13  cd bin
+   14  ls
+   15  ls
+   16  pwd
+   17  ll
+   18  which web
+   19  ls
+   20  ll
+   21  sudo systemctl status tomcat.service
+   22  cd
+   23  ll
+   24  cd apache-tomcat-10.0.8/
+   25  ls
+   26  ll
+   27  cd
+   28  cd /opt/tomcat/
+   29  ls
+   30  cd webapps/
+   31  ls
+   32  cd
+   33  ls
+   34  mv itdefined-war-1.0.0/ /opt/tomcat/webapps/
+   35  sudo mv itdefined-war-1.0.0/ /opt/tomcat/webapps/
+   36  sudo systemctl restart tomcat.service
+   37  history

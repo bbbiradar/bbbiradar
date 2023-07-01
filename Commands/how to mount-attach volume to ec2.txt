@@ -1,0 +1,73 @@
+
+>> lsblk
+
+Identify the EBS volume you want to mount based on its size and device name (e.g., /dev/xvdf).
+
+If the EBS volume is not formatted, you need to format it with a file system. For example, to format it with the ext4 file system, use the following command:
+
+
+>> sudo mkfs -t ext4 /dev/xvdf
+
+Note: Replace "/dev/xvdf" with the appropriate device name for your EBS volume.
+
+Create a directory as the mount point for the EBS volume. For example:
+
+
+>> sudo mkdir /mnt/myebsvolume
+
+You can choose any directory path as per your preference.
+
+Mount the EBS volume to the created directory using the following command:
+
+
+>> sudo mount /dev/xvdf /mnt/myebsvolume
+
+Again, replace "/dev/xvdf" with the appropriate device name for your EBS volume.
+
+Verify that the EBS volume is mounted successfully by listing the contents of the mount point directory:
+
+
+>> ls /mnt/myebsvolume
+
+You should see the contents of the mounted EBS volume.
+
+To ensure that the EBS volume is automatically mounted when the EC2 instance is rebooted, you can add an entry to the /etc/fstab file. Open the file using a text editor:
+
+
+>> sudo nano /etc/fstab
+
+Add the following entry at the end of the file:
+
+
+>> /dev/xvdf    /mnt/myebsvolume    ext4    defaults,nofail    0    2
+
+Save the file and exit the text editor.
+
+Now your EBS volume is mounted to the specified directory in the Linux EC2 instance. It will be automatically mounted whenever the EC2 instance is rebooted.
+
+
+
+Command explaination 
+
+
+>> lsblk: This command lists all the block devices attached to the system. It helps you identify the device name of the EBS volume you want to mount.
+
+>> sudo mkfs -t ext4 /dev/xvdf: The mkfs command is used to create a file system on a device. In this case, it formats the EBS volume specified by /dev/xvdf with the ext4 file system. Adjust the device name (/dev/xvdf) to match the actual device you want to format.
+
+>> sudo mkdir /mnt/myebsvolume: This command creates a directory named "myebsvolume" in the /mnt directory. You can choose any directory as the mount point for the EBS volume. Adjust the directory path (/mnt/myebsvolume) to your desired location.
+
+>> sudo mount /dev/xvdf /mnt/myebsvolume: This command mounts the EBS volume specified by /dev/xvdf to the /mnt/myebsvolume directory. Again, adjust the device name and mount point path as needed.
+
+>> ls /mnt/myebsvolume: After mounting the EBS volume, this command lists the contents of the mount point directory (/mnt/myebsvolume). It helps you verify that the volume has been successfully mounted.
+
+>> sudo nano /etc/fstab: This command opens the /etc/fstab file in the Nano text editor. The /etc/fstab file contains information about file systems and their mount points, including entries for automatically mounting volumes at boot time.
+
+>> /dev/xvdf /mnt/myebsvolume ext4 defaults,nofail 0 2: This entry is added to the /etc/fstab file. It specifies the device (/dev/xvdf), the mount point (/mnt/myebsvolume), the file system type (ext4), mount options (defaults,nofail), and two numbers (0 and 2) that control the file system check order and backup options.
+
+By adding this entry to the /etc/fstab file, the EBS volume will be automatically mounted at system boot, ensuring its persistence across reboots.
+
+
+
+
+
+
