@@ -1,0 +1,63 @@
+pipeline {
+    agent any 
+
+    tools {
+        maven 'maven-3.9.2'
+    }
+
+
+    stages {
+        stage ('Build-Maven') {
+            steps {
+                sh '''
+                    cd ./maven/simple-war/
+                    mvn clean package
+                    cd ./target/
+                    ls
+                '''
+            }
+        }
+
+        stage ('Deploy-Tomcat') {
+            steps {
+                script {
+                    deploy adapters: [tomcat9(credentialsId: 'tomcat-pass', path: '', url: 'http://54.163.214.123:8080/')], 
+                        contextPath: '/itdefined-war-1.0.0', 
+                        war: 'maven/simple-war/target/itdefined-war-1.0.0.war'
+                }
+            }
+        }
+    }
+
+}"
+
+
+******** Explaination ****************
+
+
+
+The provided code snippet is a Jenkins Declarative Pipeline script. It defines a Jenkins pipeline with two stages: "Build-Maven" and "Deploy-Tomcat". Let's go through the script step by step:
+
+pipeline: This keyword marks the beginning of the pipeline block.
+
+agent any: This specifies that the pipeline can be executed on any available agent (slave). It means the pipeline can run on any available Jenkins agent.
+
+tools: This block is used to define the tools or software versions needed for the pipeline. In this case, it specifies that the Maven version 'maven-3.9.2' should be used. Jenkins will automatically download and configure this version of Maven for the pipeline.
+
+stages: This block contains the different stages of the pipeline.
+
+stage ('Build-Maven'): This defines the first stage of the pipeline, named "Build-Maven".
+
+steps: This block contains the steps to be executed within the stage.
+
+sh ''' ... ''': This is a shell (bash) step, indicated by sh. It executes the shell commands within the triple quotes. In this case, it changes the directory to ./maven/simple-war/, runs the mvn clean package command to clean and package the Maven project, changes the directory to ./target/, and lists the files using the ls command.
+
+stage ('Deploy-Tomcat'): This defines the second stage of the pipeline, named "Deploy-Tomcat".
+
+steps: This block contains the steps to be executed within the stage.
+
+script: This block allows for the execution of scripted pipeline syntax within the declarative pipeline. It provides more flexibility to include custom logic or scripted steps.
+
+deploy: This step deploys the war file to a Tomcat server. It specifies the deployment details, such as the Tomcat URL, credentials for authentication, context path, and the path to the WAR file to be deployed.
+
+The provided script builds a Maven project, generates a WAR file, and deploys it to a Tomcat server using Jenkins.
