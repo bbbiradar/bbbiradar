@@ -1,0 +1,29 @@
+######//** Definition **\\ ####### 
+Shell scripting refers to writing a series of commands for a shell (command-line interpreter) to execute. 
+It involves creating a script or program using a shell language, like Bash, to automate tasks or execute commands in a sequence. 
+These scripts can range from simple, one-line commands to complex programs, allowing users to perform various operations,
+manage files, automate tasks, and handle system functionalities efficiently within a Unix or Unix-like operating system environment.
+
+>> Shell srcipt start with shebang #!/bin/bash
+>> The file should be .Sh
+>> example: my_first_script_file.sh
+>> run the script ./ and the file name 
+>> Example: ./ my_first_script_file.sh /OR/ bash  my_first_script_file.sh
+
+##$#$$# variables #$%$#%$#%$
+
+Variables in scripting serve as containers to store data or values that can be referenced and manipulated throughout the script. 
+They are placeholders that hold information like numbers, strings (text), filenames, etc.
+
+In shell scripting, variables are defined by assigning a value to a name, typically in the format variable_name=value. 
+For example:
+name="John"
+age=25
+
+Once defined, you can use these variables by referencing their names. For instance:
+
+echo "My name is $name and I am $age years old."
+
+Variables can be reassigned new values, and they can also be used for various purposes like controlling flow, 
+performing calculations, defining paths, and much more within a script.
+
