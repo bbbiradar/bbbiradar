@@ -27,3 +27,32 @@ echo "My name is $name and I am $age years old."
 Variables can be reassigned new values, and they can also be used for various purposes like controlling flow, 
 performing calculations, defining paths, and much more within a script.
 
+>> We can change varialble value by specifying in the same file 
+example: we will take above example 
+name="Ram"
+age=25
+So the in o/p we get the last changed value ""Ram
+and if dont want to allow to chenage variable name we use readonly 
+>> example: readonly name="Ram"
+if we try to chnage that variable we will get error saying that this variable is readolny.
+
+#%$#%$#%$#% Array @$#@$@$@@@%@%$@%@
+
+-> Definition: An array in programming is a data structure that allows you to store multiple values of the same type under a single variable name. 
+Arrays are particularly useful when you need to work with a collection of elements, 
+like a list of names, numbers, or any other type of data.
+In shell scripting, arrays can be created, though the syntax might differ slightly depending on the shell you're using (e.g., Bash, sh, etc.).
+>> Here's an example of how you can create an array in Bash:
+ >>>> my_array=(apple orange banana).
+
+This line creates an array named my_array containing three elements: "apple," "orange," and "banana." You can access individual elements of the array using their indices (starting from 0):
+
+>>> echo "${my_array[0]}"  # Prints the first element (apple)
+>>> echo "${my_array[1]}"  # Prints the second element (orange)
+>>> echo "${my_array[2]}"  # Prints the third element (banana)
+
+You can also access all elements or iterate through them using a loop:
+>>> echo "${my_array[@]}"  # Prints all elements in the array
+
+Arrays in shell scripting can be powerful for storing and manipulating collections of data, enabling you to perform operations like sorting, filtering, or iterating through elements efficiently.
+
