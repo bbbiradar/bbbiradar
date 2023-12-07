@@ -1,7 +1,7 @@
 ######//** Definition **\\ ####### 
 Shell scripting refers to writing a series of commands for a shell (command-line interpreter) to execute. 
-It involves creating a script or program using a shell language, like Bash, to automate tasks or execute commands in a sequence. 
-These scripts can range from simple, one-line commands to complex programs, allowing users to perform various operations,
+It involves creating a script or program using a shell language, like Bash, to automate tasks or execute commands in a sequence. o
+These scripts can range from simple, one-line commands to cmplex programs, allowing users to perform various operations,
 manage files, automate tasks, and handle system functionalities efficiently within a Unix or Unix-like operating system environment.
 
 >> Shell srcipt start with shebang #!/bin/bash
@@ -55,4 +55,11 @@ You can also access all elements or iterate through them using a loop:
 >>> echo "${my_array[@]}"  # Prints all elements in the array
 
 Arrays in shell scripting can be powerful for storing and manipulating collections of data, enabling you to perform operations like sorting, filtering, or iterating through elements efficiently.
+
+> How to get the length of the array
+
+>>> echo "${#my_array[*]}" # o/p = 3
+
+> How to get specific values?
+>>> echo"${my_array[*]:1:2}"
 
